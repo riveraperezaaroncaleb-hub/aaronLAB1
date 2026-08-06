@@ -92,7 +92,7 @@ function renderHistory() {
         historyList.appendChild(li);
     });
 }
-
+hola
 // commit 37: alternar la visibilidad del historial
 function toggleHistory() {
     const isOpen = historyPanel.classList.toggle('open');
