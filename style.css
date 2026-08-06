@@ -1,0 +1,180 @@
+/* commit 15: iniciar reset básico para todos los elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+hola
+/* commit 16: variables de color y tipografía */
+:root {
+    --bg: #0f172a;
+    --card: #152038;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-dark: #0ea5e9;
+    --danger: #fb7185;
+    --shadow: 0 18px 50px rgba(15, 23, 42, 0.35);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* commit 17: cuerpo centrado y fondo oscuro */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+    color: var(--text);
+    padding: 1rem;
+}
+
+/* commit 18: contenedor principal con ancho fijo y sombra */
+.calculator {
+    width: min(520px, 100%);
+    background: var(--card);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* commit 19: panel de pantalla con relleno y separación */
+.screen-panel {
+    padding: 1.5rem;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8));
+}
+
+/* commit 20: pantalla de resultados y minirenglón */
+.display {
+    display: grid;
+    gap: 0.5rem;
+    text-align: right;
+}
+
+.history-line {
+    color: var(--muted);
+    font-size: 0.95rem;
+    min-height: 1.2rem;
+    word-break: break-all;
+}
+
+.current-line {
+    font-size: clamp(2rem, 4vw, 3rem);
+    word-break: break-all;
+}
+
+/* commit 21: diseño de botones con grid de dos columnas */
+.buttons-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(64px, 1fr));
+    gap: 0.85rem;
+}
+
+.side-panel {
+    display: grid;
+    gap: 0.85rem;
+    align-self: start;
+}
+
+/* commit 22: estilo general de botones */
+.btn {
+    border: none;
+    border-radius: 18px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+    background: rgba(148, 163, 184, 0.12);
+    color: var(--text);
+}
+
+.btn.wide {
+    grid-column: span 2;
+}
+
+/* commit 23: botones de operaciones con color distinto */
+.btn.operator,
+.equals-btn,
+.history-toggle,
+.clear-history {
+    background: var(--accent);
+    color: #0f172a;
+}
+
+.equals-btn {
+    font-weight: 700;
+}
+
+/* commit 24: efectos hover y active para botones */
+.btn:hover {
+    transform: translateY(-1px);
+    background: rgba(56, 189, 248, 0.95);
+}
+
+.btn:active {
+    transform: translateY(0);
+    opacity: 0.9;
+}
+
+/* commit 25: panel de historial ocultable con transición suave */
+.history-panel {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.95);
+    transition: max-height 0.25s ease;
+}
+
+/* commit 26: contenido del historial */
+.history-panel.open {
+    max-height: 280px;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem 0.5rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.history-list {
+    list-style: none;
+    padding: 1rem 1.5rem 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.history-list li {
+    background: rgba(148, 163, 184, 0.08);
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    color: var(--text);
+}
+
+/* commit 27: responsive para pantallas pequeñas */
+@media (max-width: 520px) {
+    .buttons-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .side-panel {
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .button-grid {
+        grid-template-columns: repeat(4, minmax(56px, 1fr));
+    }
+}
