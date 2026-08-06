@@ -71,7 +71,7 @@ function calculateResult() {
         currentLine.textContent = 'Error';
     }
 }
-
+hola
 // commit 35: agregar entrada a historial
 function addHistory(input, output) {
     history.unshift({ input, output });
