@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- commit 1: crear archivo HTML base con estructura principal -->
+<html lang="es">
+<head>
+    <!-- commit 2: meta tags y título de la aplicación -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!-- commit 3: enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- commit 4: contenedor principal de la calculadora -->
+    <main class="calculator" aria-label="Calculadora">
+        <!-- commit 5: panel de pantalla con historial y resultado -->
+        <section class="screen-panel">
+            <div class="display">
+                <div id="historyLine" class="history-line" aria-live="polite"></div>
+                <div id="currentLine" class="current-line">0</div>
+            </div>
+        </section>
+
+        <!-- commit 6: panel de botones con cuadrícula principal -->
+        <section class="buttons-panel">
+            <div class="button-grid">
+                <!-- commit 7: fila de números y operador de división -->
+                <button class="btn" data-number="7">7</button>
+                <button class="btn" data-number="8">8</button>
+                <button class="btn" data-number="9">9</button>
+                <button class="btn operator" data-operator="/">÷</button>
+
+                <!-- commit 8: fila de números y operador de multiplicación -->
+                <button class="btn" data-number="4">4</button>
+                <button class="btn" data-number="5">5</button>
+                <button class="btn" data-number="6">6</button>
+                <button class="btn operator" data-operator="*">×</button>
+
+                <!-- commit 9: fila de números y operador de resta -->
+                <button class="btn" data-number="1">1</button>
+                <button class="btn" data-number="2">2</button>
+                <button class="btn" data-number="3">3</button>
+                <button class="btn operator" data-operator="-">−</button>
+
+                <!-- commit 10: fila con cero, punto decimal, potenciación y suma -->
+                <button class="btn" data-number="0">0</button>
+                <button class="btn" data-number=".">.</button>
+                <button class="btn operator" data-operator="^">^</button>
+                <button class="btn operator" data-operator="+">+</button>
+
+                <!-- commit 11: botones adicionales para porcentajes, raíz y acciones -->
+                <button class="btn" data-action="percent">%</button>
+                <button class="btn" data-action="sqrt">√</button>
+                <button class="btn" data-action="clear-entry">DEL</button>
+                <button class="btn equals-btn" data-action="equals">=</button>
+            </div>
+
+            <!-- commit 12: panel lateral con historial y limpieza -->
+            <div class="side-panel">
+                <button class="btn history-toggle" data-action="history-toggle">Historial</button>
+                <button class="btn clear-history" data-action="clear-history">Limpiar historial</button>
+                <button class="btn" data-action="clear-all">AC</button>
+            </div>
+        </section>
+
+        <!-- commit 13: panel de historial ocultable -->
+        <section id="historyPanel" class="history-panel" aria-hidden="true">
+            <div class="history-header">
+                <h2>Historial</h2>
+                <span>Últimas operaciones</span>
+            </div>
+            <ul id="historyList" class="history-list"></ul>
+        </section>
+    </main>
+
+    <!-- commit 14: cargar script JavaScript al final del body -->
+    <script src="script.js"></script>
+</body>
+</html>            
