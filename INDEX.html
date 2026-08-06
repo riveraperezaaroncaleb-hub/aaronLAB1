@@ -9,6 +9,7 @@
     <!-- commit 3: enlace al archivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- commit 4: contenedor principal de la calculadora -->
     <main class="calculator" aria-label="Calculadora">
@@ -28,6 +29,7 @@
                 <button class="btn" data-number="8">8</button>
                 <button class="btn" data-number="9">9</button>
                 <button class="btn operator" data-operator="/">÷</button>
+                
 
                 <!-- commit 8: fila de números y operador de multiplicación -->
                 <button class="btn" data-number="4">4</button>
@@ -40,6 +42,7 @@
                 <button class="btn" data-number="2">2</button>
                 <button class="btn" data-number="3">3</button>
                 <button class="btn operator" data-operator="-">−</button>
+                
 
                 <!-- commit 10: fila con cero, punto decimal, potenciación y suma -->
                 <button class="btn" data-number="0">0</button>
@@ -53,6 +56,7 @@
                 <button class="btn" data-action="clear-entry">DEL</button>
                 <button class="btn equals-btn" data-action="equals">=</button>
             </div>
+           
 
             <!-- commit 12: panel lateral con historial y limpieza -->
             <div class="side-panel">
@@ -61,11 +65,12 @@
                 <button class="btn" data-action="clear-all">AC</button>
             </div>
         </section>
+        
 
         <!-- commit 13: panel de historial ocultable -->
         <section id="historyPanel" class="history-panel" aria-hidden="true">
             <div class="history-header">
-                <h2>Historial</h2>
+                <h2>Historial </h2>
                 <span>Últimas operaciones</span>
             </div>
             <ul id="historyList" class="history-list"></ul>
