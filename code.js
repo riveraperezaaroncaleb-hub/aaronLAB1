@@ -7,7 +7,7 @@ const historyList = document.getElementById('historyList');
 let expression = '';
 let lastResult = null;
 const history = [];
-
+hola
 // commit 29: actualizar la pantalla con texto actual
 function updateDisplay() {
     currentLine.textContent = expression || '0';
