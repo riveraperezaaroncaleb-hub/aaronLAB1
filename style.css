@@ -165,7 +165,7 @@ body {
     gap: 0.75rem;
     color: var(--text);
 }
-
+hola
 /* commit 27: responsive para pantallas pequeñas */
 @media (max-width: 520px) {
     .buttons-panel {
