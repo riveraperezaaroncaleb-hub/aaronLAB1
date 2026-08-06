@@ -143,7 +143,7 @@ function handleAction(action) {
         updateDisplay();
     }
 }
-hola
+
 // commit 41: soporte para teclado físico
 window.addEventListener('keydown', (event) => {
     const { key } = event;
