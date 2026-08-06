@@ -28,7 +28,7 @@ function appendNumber(number) {
     }
     updateDisplay();
 }
-
+hola
 // commit 31: agregar operador con validación
 function appendOperator(operator) {
     if (!expression && operator !== '-') return;
