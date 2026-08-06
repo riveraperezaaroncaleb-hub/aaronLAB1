@@ -45,6 +45,7 @@ function clearAll() {
     expression = '';
     updateDisplay();
 }
+hola
 
 // commit 33: borrar el último carácter
 function clearEntry() {
