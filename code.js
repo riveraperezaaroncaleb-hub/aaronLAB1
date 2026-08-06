@@ -105,7 +105,7 @@ function clearHistory() {
     history.length = 0;
     renderHistory();
 }
-hola
+
 // commit 39: manejar botones dinámicos
 function handleButtonClick(event) {
     const target = event.target;
