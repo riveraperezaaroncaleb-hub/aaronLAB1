@@ -11,7 +11,7 @@ const history = [];
 // commit 29: actualizar la pantalla con texto actual
 function updateDisplay() {
     currentLine.textContent = expression || '0';
-    historyLine.textContent = lastResult !== null ? Último: ${lastResult} : '';
+    historyLine.textContent = lastResult !== null ? `Último: ${lastResult}` : '';
 }
 
 // commit 30: agregar número o punto decimal
@@ -56,9 +56,9 @@ function clearEntry() {
 // commit 34: calcular con validaciones
 function calculateResult() {
     if (!expression || /[+\-*/^%.]$/.test(expression)) return;
-    let formula = expression.replace(/÷/g, '/').replace(/×/g, '').replace(/\^/g, '*');
+    let formula = expression.replace(/÷/g, '/').replace(/×/g, '*').replace(/\^/g, '**');
     try {
-        const result = Function("use strict"; return (${formula}))();
+        const result = Function(`"use strict"; return (${formula})`)();
         if (result === Infinity || result === -Infinity || Number.isNaN(result)) {
             currentLine.textContent = 'Error';
             return;
@@ -88,7 +88,7 @@ function renderHistory() {
     }
     history.forEach((item) => {
         const li = document.createElement('li');
-        li.innerHTML = <span>${item.input}</span><strong>${item.output}</strong>;
+        li.innerHTML = `<span>${item.input}</span><strong>${item.output}</strong>`;
         historyList.appendChild(li);
     });
 }
@@ -121,6 +121,9 @@ function handleButtonClick(event) {
 
 document.body.addEventListener('click', handleButtonClick);
 
+console.log(1234567);
+
+
 // commit 40: manejar acciones de botones
 function handleAction(action) {
     if (action === 'clear-all') clearAll();
@@ -138,7 +141,7 @@ function handleAction(action) {
             return;
         }
         const result = Math.sqrt(value);
-        addHistory(√(${expression}), result);
+        addHistory(`√(${expression})`, result);
         expression = String(result);
         updateDisplay();
     }
