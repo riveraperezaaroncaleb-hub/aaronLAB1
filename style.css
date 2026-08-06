@@ -127,7 +127,7 @@ body {
     transform: translateY(0);
     opacity: 0.9;
 }
-hola
+
 /* commit 25: panel de historial ocultable con transición suave */
 .history-panel {
     max-height: 0;
